@@ -46,7 +46,8 @@ function animateRepo(svg) {
   const files = svg.querySelectorAll(".repo-file");
   const dot = svg.querySelector("#repo-git-dot");
 
-  gsap.set([folder, ...files, dot], { opacity: 0, transformOrigin: "center" });
+  gsap.set([folder, dot], { opacity: 0, transformOrigin: "center" });
+  gsap.set(files, { opacity: 0, y: 10, transformOrigin: "center" });
 
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
   tl.to(folder, { opacity: 1, duration: 0.5 })
@@ -67,7 +68,7 @@ function animateClone(svg) {
   gsap.set(cloud, { opacity: 0, x: -20 });
   gsap.set(laptop, { opacity: 0, x: 20 });
   gsap.set(arrow, { opacity: 0, strokeDashoffset: 60 });
-  gsap.set(files, { opacity: 0 });
+  gsap.set(files, { opacity: 0, x: 20 });
 
   const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
   tl.to(cloud, { opacity: 1, x: 0, duration: 0.5 })
