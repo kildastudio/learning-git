@@ -126,16 +126,10 @@ body {
 }
 
 .concept-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
   padding: 1.5rem;
-}
-
-@media (max-width: 720px) {
-  .concept-body {
-    grid-template-columns: 1fr;
-  }
 }
 
 .concept-text h3 {
@@ -175,12 +169,13 @@ body {
 
 /* ── Animation panel ── */
 .animation-panel {
+  order: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
-  padding: 1rem;
+  min-height: 320px;
+  padding: 2rem 1.5rem;
   background: var(--cream);
   border-radius: var(--radius);
   border: 1px solid var(--cream-dark);
@@ -188,7 +183,7 @@ body {
 
 .animation-panel svg {
   width: 100%;
-  max-width: 380px;
+  max-width: 720px;
   height: auto;
   overflow: visible;
 }
